@@ -1,13 +1,17 @@
+@use "sass:map";
+
 $breakpoints: (
   tablet: 768px,
   desktop: 1024px
 );
 
 @mixin desde($tamano) {
-  @if map-has-key($breakpoints, $tamano) {
-    @media (min-width: map-get($breakpoints, $tamano)) {
+  @if map.has-key($breakpoints, $tamano) {
+    @media (min-width: map.get($breakpoints, $tamano)) {
       @content;
     }
+  } @else {
+    @warn "El tamaño '#{$tamano}' no está definido en los breakpoints.";
   }
 }
 

@@ -68,14 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     input.style.borderColor = '#ff4d4d';
   };
 
-  const limpiarErrores = () => {
-    document.querySelectorAll('.error-msg').forEach(span => span.textContent = '');
-    Object.values(inputs).forEach(input => input.style.borderColor = 'rgba(255,255,255,0.1)');
-  };
-
   formulario.addEventListener('submit', (e) => {
     e.preventDefault();
-    limpiarErrores();
     let esValido = true;
 
     if (inputs.nombre.value.trim() === '') {

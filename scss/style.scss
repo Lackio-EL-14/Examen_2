@@ -87,6 +87,7 @@ a { text-decoration: none; }
 
     @include m.desde(tablet) {
       display: flex;
+      text-align: center;
       flex-direction: row;
       position: static;
       width: auto;
@@ -161,6 +162,14 @@ a { text-decoration: none; }
     display: flex;
     flex-direction: column;
     transition: transform 0.3s;
+    
+     .card-img {
+      width: 100%;           
+      height: 180px;         
+      object-fit: cover;     
+      border-radius: 4px;   
+      margin-bottom: 15px;   
+    }
 
     &:hover {
       transform: translateY(-5px);
