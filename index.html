@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SysTech-Q - Servicios Digitales</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">SysTech-Q</div>
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-content">
+        <h1 id="hero-title">Soluciones Tecnológicas de Alto Nivel</h1>
+        <p>Impulsamos tu negocio con desarrollo moderno, seguridad y automatización.</p>
+        <a href="#servicios" class="btn btn-primary">Ver Catálogo</a>
+      </div>
+    </section>
+
+    <section id="servicios" class="servicios section-padding">
+      <div class="container">
+        <div class="section-header">
+          <h2>Catálogo de Servicios</h2>
+          <p>Explora nuestras especialidades</p>
+        </div>
+
+        <div class="filtros">
+          <button class="btn-filtro active" data-filter="todos">Todos</button>
+          <button class="btn-filtro" data-filter="desarrollo">Desarrollo Web</button>
+          <button class="btn-filtro" data-filter="datos">Datos y Automatización</button>
+          <button class="btn-filtro" data-filter="seguridad">Ciberseguridad</button>
+        </div>
+
+        <p id="contador-servicios" class="contador-texto">Mostrando 6 servicios</p>
+
+        <div class="servicios-grid" id="servicios-grid">
+          
+          <article class="card" data-category="desarrollo">
+            <span class="badge">Desarrollo Web</span>
+            <h3>Aplicaciones Fullstack</h3>
+            <p>Desarrollo robusto utilizando Angular para el frontend y NestJS para el backend.</p>
+            <div class="card-footer">
+              <span class="precio">Desde $800</span>
+              <button class="btn btn-outline btn-detalle">Saber más</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="datos">
+            <span class="badge">Datos y Automatización</span>
+            <h3>Extracción y Web Scraping</h3>
+            <p>Automatización de recolección de datos en sitios web complejos de forma eficiente.</p>
+            <div class="card-footer">
+              <span class="precio">Desde $150</span>
+              <button class="btn btn-outline btn-detalle">Saber más</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="seguridad">
+            <span class="badge">Ciberseguridad</span>
+            <h3>Auditoría y Bug Hunting</h3>
+            <p>Identificación y reporte de vulnerabilidades críticas bajo estándares de HackerOne.</p>
+            <div class="card-footer">
+              <span class="precio">Nivel Avanzado</span>
+              <button class="btn btn-outline btn-detalle">Saber más</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="desarrollo">
+            <span class="badge">Desarrollo Web</span>
+            <h3>Diseño UI/UX</h3>
+            <p>Prototipado en Figma y maquetación interactiva centrada en la experiencia de usuario.</p>
+            <div class="card-footer">
+              <span class="precio">Desde $300</span>
+              <button class="btn btn-outline btn-detalle">Saber más</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="datos">
+            <span class="badge">Datos y Automatización</span>
+            <h3>Arquitectura de Bases de Datos</h3>
+            <p>Diseño, optimización y migración de bases de datos relacionales con MariaDB.</p>
+            <div class="card-footer">
+              <span class="precio">Desde $400</span>
+              <button class="btn btn-outline btn-detalle">Saber más</button>
+            </div>
+          </article>
+
+          <article class="card" data-category="seguridad">
+            <span class="badge">Ciberseguridad</span>
+            <h3>Hardening de Servidores</h3>
+            <p>Configuración segura de entornos Linux, especializado en distribuciones como Parrot OS.</p>
+            <div class="card-footer">
+              <span class="precio">Desde $250</span>
+              <button class="btn btn-outline btn-detalle">Saber más</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto section-padding">
+      <div class="container form-container">
+        <div class="section-header">
+          <h2>Solicitar Cotización</h2>
+          <p>Déjanos tus datos y nos comunicaremos contigo</p>
+        </div>
+
+        <form id="form-contacto" class="formulario" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez">
+            <span class="error-msg" id="error-nombre"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com">
+            <span class="error-msg" id="error-correo"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="servicio-interes">Servicio de Interés</label>
+            <select id="servicio-interes" name="servicio-interes">
+              <option value="">-- Selecciona un servicio --</option>
+              <option value="desarrollo">Desarrollo Web</option>
+              <option value="scraping">Web Scraping</option>
+              <option value="seguridad">Ciberseguridad / Bug Hunting</option>
+              <option value="db">Bases de Datos</option>
+            </select>
+            <span class="error-msg" id="error-servicio"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe tu proyecto..."></textarea>
+            <span class="error-msg" id="error-mensaje"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Enviar Solicitud</button>
+          <div id="form-exito" class="mensaje-exito oculto">¡Formulario enviado correctamente!</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>SysTech-Q</h3>
+        <p>Soluciones digitales a medida para tu empresa.</p>
+      </div>
+      <div class="footer-links">
+        <p>Políticas de Privacidad</p>
+        <p>Términos y Condiciones</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
